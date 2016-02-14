@@ -67,7 +67,6 @@ public class CommentAdapter extends BaseAdapter {
         CircleMovementMethod circleMovementMethod;
     }
 
-    @SuppressLint("InflateParams")
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;

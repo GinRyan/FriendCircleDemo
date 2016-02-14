@@ -39,14 +39,14 @@ public class CirclePresenter {
 	}
 	/**
 	 * 
-	* @Title: addFavort 
+	* @Title: addFavorite
 	* @Description: 点赞
 	* @param  circlePosition     
 	* @return void    返回类型 
 	* @throws
 	 */
-	public void addFavort(final int circlePosition){
-		mCircleModel.addFavort(new IDataRequestListener() {
+	public void addFavorite(final int circlePosition){
+		mCircleModel.addFavorite(new IDataRequestListener() {
 			
 			@Override
 			public void loadSuccess(Object object) {
@@ -56,14 +56,14 @@ public class CirclePresenter {
 	}
 	/**
 	 * 
-	* @Title: deleteFavort 
+	* @Title: deleteFavorite
 	* @Description: 取消点赞 
 	* @param @param circlePosition
 	* @param @param favortId     
 	* @return void    返回类型 
 	* @throws
 	 */
-	public void deleteFavort(final int circlePosition, final String favortId){
+	public void deleteFavorite(final int circlePosition, final String favortId){
 		mCircleModel.deleteFavort(new IDataRequestListener() {
 				
 				@Override

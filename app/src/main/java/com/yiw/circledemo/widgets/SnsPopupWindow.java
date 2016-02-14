@@ -36,13 +36,13 @@ public class SnsPopupWindow extends PopupWindow implements OnClickListener{
 	// 定义弹窗子类项列表
 	private ArrayList<ActionItem> mActionItems = new ArrayList<ActionItem>();
 
-	public void setmItemClickListener(OnItemClickListener mItemClickListener) {
-		this.mItemClickListener = mItemClickListener;
+	public void setItemClickListener(OnItemClickListener l) {
+		this.mItemClickListener = l;
 	}
 	public ArrayList<ActionItem> getmActionItems() {
 		return mActionItems;
 	}
-	public void setmActionItems(ArrayList<ActionItem> mActionItems) {
+	public void setActionItems(ArrayList<ActionItem> mActionItems) {
 		this.mActionItems = mActionItems;
 	}
 

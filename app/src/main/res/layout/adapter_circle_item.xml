@@ -119,7 +119,7 @@
                 android:background="@drawable/im_distribute_comm_bg"
                 android:orientation="vertical" >
 
-                <com.yiw.circledemo.widgets.FavortListView
+                <com.yiw.circledemo.widgets.FavoriteListView
                     android:id="@+id/favortListTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

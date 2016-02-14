@@ -20,7 +20,7 @@ public class CircleModel {
 		requestServer(listener);
 	}
 
-	public void addFavort( final IDataRequestListener listener) {
+	public void addFavorite(final IDataRequestListener listener) {
 		requestServer(listener);
 	}
 

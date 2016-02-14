@@ -16,15 +16,15 @@ import com.yiw.circledemo.mvp.view.ICircleViewUpdate;
 import com.yiw.circledemo.utils.CommonUtils;
 import com.yiw.circledemo.widgets.AppNoScrollerListView;
 /**
- * 
-* @ClassName: CirclePublicCommentContral 
+ *
+* @ClassName: CirclePublicCommentController
 * @Description: 控制EdittextView的显示和隐藏，以及发布动作，根据回复的位置调整listview的位置
 * @author yiw
-* @date 2015-12-28 下午3:45:21 
+* @date 2015-12-28 下午3:45:21
 *
  */
-public class CirclePublicCommentContral {
-	private static final String TAG = CirclePublicCommentContral.class.getSimpleName();
+public class CirclePublicCommentController {
+	private static final String TAG = CirclePublicCommentController.class.getSimpleName();
 	private View mEditTextBody;
 	private EditText mEditText;
 	private View mSendBt;
@@ -43,8 +43,8 @@ public class CirclePublicCommentContral {
 	 * 选择的commentItem距选择的CircleItem底部的距离
 	 */
 	private int mSelectCommentItemBottom;
-	
-	public ListView getmListView() {
+
+	public ListView getListView() {
 		return mListView;
 	}
 
@@ -52,7 +52,7 @@ public class CirclePublicCommentContral {
 		this.mListView = mListView;
 	}
 
-	public CirclePublicCommentContral(Context context, View editTextBody, EditText editText, View sendBt){
+	public CirclePublicCommentController(Context context, View editTextBody, EditText editText, View sendBt){
 		mContext = context;
 		mEditTextBody = editTextBody;
 		mEditText = editText;
@@ -69,15 +69,15 @@ public class CirclePublicCommentContral {
 		});
 	}
 	/**
-	 * 
-	* @Title: editTextBodyVisible 
+	 *
+	* @Title: editTextBodyVisible
 	* @Description: 评论时显示发布布局，评论完隐藏，根据不同位置调节listview的滑动
 	* @param  visibility
 	* @param  mCirclePresenter
 	* @param  mCirclePosition
 	* @param  commentType  0:发布评论   1：回复评论
-	* @param  replyUser    
-	* @return void    返回类型 
+	* @param  replyUser
+	* @return void    返回类型
 	* @throws
 	 */
 	public void editTextBodyVisible(int visibility, CirclePresenter mCirclePresenter, int mCirclePosition, int commentType, User replyUser, int commentPosition) {
@@ -133,7 +133,7 @@ public class CirclePublicCommentContral {
 		}
 
 	}
-	
+
 	public void editTextBodyVisible(int visibility) {
 		if(mEditTextBody!=null){
 			mEditTextBody.setVisibility(visibility);
@@ -141,7 +141,7 @@ public class CirclePublicCommentContral {
 				mEditText.requestFocus();
 				//弹出键盘
 				CommonUtils.showSoftInput(mEditText.getContext(), mEditText);
-				
+
 			}else if(View.GONE==visibility){
 				//隐藏键盘
 				CommonUtils.hideSoftInput(mEditText.getContext(), mEditText);
@@ -156,7 +156,7 @@ public class CirclePublicCommentContral {
 		}
 		return result;
 	}
-	
+
 	public void clearEditText(){
 		if(mEditText!=null){
 			mEditText.setText("");

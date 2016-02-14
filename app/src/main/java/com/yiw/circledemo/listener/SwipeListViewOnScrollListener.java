@@ -5,36 +5,34 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+
 /**
- * 
-* @ClassName: SwpipeListViewOnScrollListener 
-* @Description: 解决SwipeRefreshLayout和listview的滑动冲突事件
-* @author yiw
-* @date 2015-12-28 下午4:17:48 
-*
+ * @author yiw
+ * @ClassName: SwipeListViewOnScrollListener
+ * @Description: 解决SwipeRefreshLayout和listview的滑动冲突事件
+ * @date 2015-12-28 下午4:17:48
  */
-public class SwpipeListViewOnScrollListener implements AbsListView.OnScrollListener {
-	 
+public class SwipeListViewOnScrollListener implements AbsListView.OnScrollListener {
+
     private SwipeRefreshLayout mSwipeView;
     private AbsListView.OnScrollListener mOnScrollListener;
- 
-    public SwpipeListViewOnScrollListener(SwipeRefreshLayout swipeView) {
+
+    public SwipeListViewOnScrollListener(SwipeRefreshLayout swipeView) {
         mSwipeView = swipeView;
     }
- 
-    public SwpipeListViewOnScrollListener(SwipeRefreshLayout swipeView,
-            OnScrollListener onScrollListener) {
+
+    public SwipeListViewOnScrollListener(SwipeRefreshLayout swipeView,
+                                         OnScrollListener onScrollListener) {
         mSwipeView = swipeView;
         mOnScrollListener = onScrollListener;
     }
- 
+
     @Override
     public void onScrollStateChanged(AbsListView absListView, int i) {
-    	System.out.println("onScrollStateChanged: " + i);
+        System.out.println("onScrollStateChanged: " + i);
     }
- 
-    @SuppressLint("NewApi")
-	@Override
+
+    @Override
     public void onScroll(AbsListView absListView, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
         View firstView = absListView.getChildAt(0);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.yiw.circledemo.adapter.FavortListAdapter;
+import com.yiw.circledemo.adapter.FavoriteListAdapter;
 import com.yiw.circledemo.spannable.ISpanClick;
 
 /**
@@ -12,7 +12,7 @@ import com.yiw.circledemo.spannable.ISpanClick;
  * @Description:
  * @date 16/1/2 18:47
  */
-public class FavortListView extends TextView{
+public class FavoriteListView extends TextView{
     private ISpanClick mSpanClickListener;
 
     public void setSpanClickListener(ISpanClick listener){
@@ -22,19 +22,19 @@ public class FavortListView extends TextView{
         return  mSpanClickListener;
     }
 
-    public FavortListView(Context context) {
+    public FavoriteListView(Context context) {
         super(context);
     }
 
-    public FavortListView(Context context, AttributeSet attrs) {
+    public FavoriteListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public FavortListView(Context context, AttributeSet attrs, int defStyle) {
+    public FavoriteListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public void setAdapter(FavortListAdapter adapter){
+    public void setAdapter(FavoriteListAdapter adapter){
         adapter.bindListView(this);
     }
 

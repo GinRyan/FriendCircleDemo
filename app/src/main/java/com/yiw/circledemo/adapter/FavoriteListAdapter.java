@@ -9,10 +9,10 @@ import android.text.style.ImageSpan;
 
 import com.yiw.circledemo.MyApplication;
 import com.yiw.circledemo.R;
-import com.yiw.circledemo.bean.FavortItem;
+import com.yiw.circledemo.bean.FavoriteItem;
 import com.yiw.circledemo.spannable.CircleMovementMethod;
 import com.yiw.circledemo.spannable.NameClickable;
-import com.yiw.circledemo.widgets.FavortListView;
+import com.yiw.circledemo.widgets.FavoriteListView;
 
 import java.util.List;
 
@@ -21,21 +21,21 @@ import java.util.List;
  * @Description:
  * @date 16/1/2 18:51
  */
-public class FavortListAdapter {
+public class FavoriteListAdapter {
 
-    private FavortListView mListView;
-    private List<FavortItem> datas;
+    private FavoriteListView mListView;
+    private List<FavoriteItem> datas;
 
-    public List<FavortItem> getDatas() {
+    public List<FavoriteItem> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<FavortItem> datas) {
+    public void setDatas(List<FavoriteItem> datas) {
         this.datas = datas;
     }
 
     @NonNull
-    public void bindListView(FavortListView listview){
+    public void bindListView(FavoriteListView listview){
         mListView = listview;
     }
 
@@ -64,7 +64,7 @@ public class FavortListAdapter {
             //添加点赞图标
             builder.append(setImageSpan());
             //builder.append("  ");
-            FavortItem item = null;
+            FavoriteItem item = null;
             for (int i=0; i<datas.size(); i++){
                 item = datas.get(i);
                 if(item != null){

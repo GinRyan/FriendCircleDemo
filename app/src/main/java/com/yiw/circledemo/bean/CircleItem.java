@@ -19,7 +19,7 @@ public class CircleItem extends BaseBean{
 	private String linkImg;
 	private String linkTitle;
 	private List<String> photos;
-	private List<FavortItem> favorters;
+	private List<FavoriteItem> favorters;
 	private List<CommentItem> comments;
 	private User user;
 	
@@ -47,10 +47,10 @@ public class CircleItem extends BaseBean{
 	public void setType(String type) {
 		this.type = type;
 	}
-	public List<FavortItem> getFavorters() {
+	public List<FavoriteItem> getFavorters() {
 		return favorters;
 	}
-	public void setFavorters(List<FavortItem> favorters) {
+	public void setFavorters(List<FavoriteItem> favorters) {
 		this.favorters = favorters;
 	}
 	public List<CommentItem> getComments() {
@@ -101,7 +101,7 @@ public class CircleItem extends BaseBean{
 	public String getCurUserFavortId(String curUserId){
 		String favortid = "";
 		if(!TextUtils.isEmpty(curUserId) && hasFavort()){
-			for(FavortItem item : favorters){
+			for(FavoriteItem item : favorters){
 				if(curUserId.equals(item.getUser().getId())){
 					favortid = item.getId();
 					return favortid;

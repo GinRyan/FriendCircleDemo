@@ -21,8 +21,8 @@ import android.widget.TextView;
 
 import com.yiw.circledemo.adapter.CircleAdapter;
 import com.yiw.circledemo.bean.CircleItem;
-import com.yiw.circledemo.contral.CirclePublicCommentContral;
-import com.yiw.circledemo.listener.SwpipeListViewOnScrollListener;
+import com.yiw.circledemo.contral.CirclePublicCommentController;
+import com.yiw.circledemo.listener.SwipeListViewOnScrollListener;
 import com.yiw.circledemo.utils.CommonUtils;
 import com.yiw.circledemo.utils.DatasUtil;
 /**
@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements OnRefreshListener{
 	
 	private int mScreenHeight;
 	private int mEditTextBodyHeight;
-	private CirclePublicCommentContral mCirclePublicCommentContral;
+	private CirclePublicCommentController mCirclePublicCommentController;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements OnRefreshListener{
 	private void initView() {
 		mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.mRefreshLayout);
 		mCircleLv = (ListView) findViewById(R.id.circleLv);
-		mCircleLv.setOnScrollListener(new SwpipeListViewOnScrollListener(mSwipeRefreshLayout));
+		mCircleLv.setOnScrollListener(new SwipeListViewOnScrollListener(mSwipeRefreshLayout));
 		mCircleLv.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -80,9 +80,9 @@ public class MainActivity extends Activity implements OnRefreshListener{
 		mEditText = (EditText) findViewById(R.id.circleEt);
 		sendTv = (TextView) findViewById(R.id.sendTv);
 		
-		mCirclePublicCommentContral = new CirclePublicCommentContral(this, mEditTextBody, mEditText, sendTv);
-		mCirclePublicCommentContral.setListView(mCircleLv);
-		mAdapter.setCirclePublicCommentContral(mCirclePublicCommentContral);
+		mCirclePublicCommentController = new CirclePublicCommentController(this, mEditTextBody, mEditText, sendTv);
+		mCirclePublicCommentController.setListView(mCircleLv);
+		mAdapter.setCirclePublicCommentContral(mCirclePublicCommentController);
 		
 		setViewTreeObserver();
 	}
@@ -106,8 +106,8 @@ public class MainActivity extends Activity implements OnRefreshListener{
                 MyApplication.mKeyBoardH = keyH;
             	mScreenHeight = screenH;//应用屏幕的高度
             	mEditTextBodyHeight = mEditTextBody.getHeight();
-            	if(mCirclePublicCommentContral != null){
-            		mCirclePublicCommentContral.handleListViewScroll();
+            	if(mCirclePublicCommentController != null){
+            		mCirclePublicCommentController.handleListViewScroll();
             	}
             }
         });

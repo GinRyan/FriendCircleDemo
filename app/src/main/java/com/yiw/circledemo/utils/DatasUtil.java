@@ -2,7 +2,7 @@ package com.yiw.circledemo.utils;
 
 import com.yiw.circledemo.bean.CircleItem;
 import com.yiw.circledemo.bean.CommentItem;
-import com.yiw.circledemo.bean.FavortItem;
+import com.yiw.circledemo.bean.FavoriteItem;
 import com.yiw.circledemo.bean.User;
 
 import java.util.ArrayList;
@@ -138,13 +138,13 @@ public class DatasUtil {
 		return photos;
 	}
 
-	public static List<FavortItem> createFavortItemList() {
+	public static List<FavoriteItem> createFavortItemList() {
 		int size = getRandomNum(users.size());
-		List<FavortItem> items = new ArrayList<FavortItem>();
+		List<FavoriteItem> items = new ArrayList<FavoriteItem>();
 		List<String> history = new ArrayList<String>();
 		if (size > 0) {
 			for (int i = 0; i < size; i++) {
-				FavortItem newItem = createFavortItem();
+				FavoriteItem newItem = createFavortItem();
 				String userid = newItem.getUser().getId();
 				if (!history.contains(userid)) {
 					items.add(newItem);
@@ -157,15 +157,15 @@ public class DatasUtil {
 		return items;
 	}
 
-	public static FavortItem createFavortItem() {
-		FavortItem item = new FavortItem();
+	public static FavoriteItem createFavortItem() {
+		FavoriteItem item = new FavoriteItem();
 		item.setId(String.valueOf(favortId++));
 		item.setUser(getUser());
 		return item;
 	}
 	
-	public static FavortItem createCurUserFavortItem() {
-		FavortItem item = new FavortItem();
+	public static FavoriteItem createCurUserFavortItem() {
+		FavoriteItem item = new FavoriteItem();
 		item.setId(String.valueOf(favortId++));
 		item.setUser(curUser);
 		return item;
